@@ -6,11 +6,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace vidde_cs_utils.PriorityQueue
+namespace CSUtils.PriorityQueue
 {
 
-    // A simple min-heap implementation of a priorityQueue, implemented with an array.
-    public class VPriorityQueue<T> : IPriorityQueue<T>
+    /// <summary>
+    /// A simple min-heap implementation of a PriorityQueue.
+    /// This means that the elements with lowest priority are taken out first.
+    /// </summary>
+    public class PriorityQueue<T> : IPriorityQueue<T>
     {
         // NOTE: To get the accurate child/parent calculations, 
         // we want to start at index 1 
@@ -32,7 +35,7 @@ namespace vidde_cs_utils.PriorityQueue
             }
         }
 
-        public VPriorityQueue()
+        public PriorityQueue()
         {
             entries = new Entry[defaultSize + 1];
             maxSize = defaultSize;
