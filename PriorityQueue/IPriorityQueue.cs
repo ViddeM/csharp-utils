@@ -1,3 +1,7 @@
+/**
+ * Created by Vidar Magnusson on 19/1 - 2019
+ * https://github.com/ViddeM/
+ */
 namespace CSUtils.PriorityQueue
 {
     public interface IPriorityQueue<T>
