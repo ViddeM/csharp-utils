@@ -1,0 +1,61 @@
+
+        Incomplete toString for the priority queue
+        #region ToString
+
+
+        public override string ToString()
+        {
+            string print = "";
+            int level = 0;
+            int newLevel;
+            int elementsBelow;
+            int maxLevel = GetLevelFor(currSize);
+
+            for (int i = 1; i < currSize + 1; i++)
+            {
+                newLevel = GetLevelFor(i);
+                if (newLevel != level)
+                {
+                    print += "\n";
+                    level = newLevel;
+                }
+
+                elementsBelow = GetElementsBelow(level, maxLevel);
+                for (int j = 0; j < elementsBelow / 2; j++)
+                {
+                    print += "     ";
+                }
+                print += FormatInt((int)entries[i].Priority);
+                for (int j = 0; j < elementsBelow + 1; j++)
+                {
+                    print += "     ";
+                }
+            }
+
+            return print;
+        }
+
+        private int GetLevelFor(int index)
+        {
+            return (int)Math.Floor(Math.Log(index, 2));
+        }
+
+        private string FormatInt(int i)
+        {
+            string theString = i + "";
+            while (theString.Length < 5)
+            {
+                theString = "0" + theString;
+            }
+            return theString;
+        }
+
+        private int GetElementsBelow(int currLevel, int maxLevels)
+        {
+            int levelsBelow = maxLevels - currLevel;
+            int childrenBelow = (int)Math.Pow(2, levelsBelow + 1) - 2;
+            return childrenBelow;
+
+        }
+
+        #endregion
