@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSUtils.PriorityQueue
+namespace vidde_cs_utils.PriorityQueue
 {
 
     // A simple min-heap implementation of a priorityQueue, implemented with an array.
